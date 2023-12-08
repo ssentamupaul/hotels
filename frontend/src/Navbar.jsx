@@ -21,20 +21,26 @@ function Navbar() {
 
   return (
     <div className="page-header ">
-      <div className=" container header-region d-flex justify-content-between">
-        <div className="d-flex justify-content-between">
+      <div
+        className=" container header-region d-flex justify-content-between"
+        style={{ marginTop: "10px" }}
+      >
+        <div className="d-flex justify-content-between ">
           <div className="logo">
             <img src={logo} alt="logo" />
           </div>
 
-          <div className="dropdown-container">
+          <div className="dropdown-container mt-2">
             <button
               onClick={handleToggleDropdown}
               className="dropdown-button"
               style={{
-                color: "red",
+                color: "rgb(230,30,67)",
                 backgroundColor: "white",
                 border: "none",
+                fontSize: "14px",
+                fontStyle: "inherit",
+                fontFamily: "sans-serif",
               }}
             >
               More travel <RiArrowDropDownLine />
@@ -96,9 +102,9 @@ function Navbar() {
         </div>
 
         <div className="mainnav-items d-flex">
-          <div className="getappbtn">
+          <div className="getappbtn ">
             <button
-              className="btn
+              className="btn 
           "
               style={{
                 color: "black",
@@ -109,8 +115,10 @@ function Navbar() {
                 paddingRight: "20px",
                 fontSize: ".875rem",
                 lineHeight: "1.125rem",
-                fontSize: ".875rem",
-                lineHeight: " 1.125rem",
+                marginTop: "14px",
+                fontSize: "14px",
+                fontStyle: "inherit",
+                fontFamily: "sans-serif",
               }}
             >
               {" "}
@@ -124,20 +132,66 @@ function Navbar() {
           </div>
 
           <div className="nav-items">
-            <ul className="d-flex justify-content-between">
-              <li>
-                {" "}
-                <FaGlobeAmericas
-                  style={{
-                    color: "red",
-                  }}
-                />{" "}
+            <ul
+              className="d-flex justify-content-between"
+              style={{ listStyle: "none", padding: 0 }}
+            >
+              <li
+                style={{
+                  color: "rgb(230,30,67)",
+                  margin: "20px",
+                  fontSize: "14px",
+                  fontStyle: "inherit",
+                  fontFamily: "sans-serif",
+                }}
+              >
+                <FaGlobeAmericas style={{ marginRight: "5px" }} />
                 English
               </li>
-              <li>English</li>
-              <li>English</li>
-              <li>English</li>
-              <li>English</li>
+              <li
+                style={{
+                  color: "rgb(230,30,67)",
+                  margin: "20px",
+                  fontSize: "14px",
+                  fontStyle: "inherit",
+                  fontFamily: "sans-serif",
+                }}
+              >
+                List your property
+              </li>
+              <li
+                style={{
+                  color: "rgb(230,30,67)",
+                  margin: "20px",
+                  fontSize: "14px",
+                  fontStyle: "inherit",
+                  fontFamily: "sans-serif",
+                }}
+              >
+                Support
+              </li>
+              <li
+                style={{
+                  color: "rgb(230,30,67)",
+                  margin: "20px",
+                  fontSize: "14px",
+                  fontStyle: "inherit",
+                  fontFamily: "sans-serif",
+                }}
+              >
+                Trips
+              </li>
+              <li
+                style={{
+                  color: "rgb(230,30,67)",
+                  margin: "20px",
+                  fontSize: "14px",
+                  fontStyle: "inherit",
+                  fontFamily: "sans-serif",
+                }}
+              >
+                sign in
+              </li>
             </ul>
           </div>
         </div>

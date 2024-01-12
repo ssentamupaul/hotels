@@ -1,12 +1,21 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
+
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { MdFileDownload } from "react-icons/md";
 import { FaGlobeAmericas } from "react-icons/fa";
+import { IoBag } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
 
 import logo from "./Images/logo.png";
 import "./Navbar.css";
+import LanguageModal from "./Modal1";
 
 function Navbar() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Deals");
 
@@ -20,29 +29,18 @@ function Navbar() {
   };
 
   return (
-    <div className="page-header ">
+    <div className="page-header">
       <div
-        className=" container header-region d-flex justify-content-between"
+        className="container mainnav-items d-flex justify-content-between"
         style={{ marginTop: "10px" }}
       >
-        <div className="d-flex justify-content-between ">
+        <div className="d-flex justify-content-between">
           <div className="logo">
             <img src={logo} alt="logo" />
           </div>
 
           <div className="dropdown-container mt-2">
-            <button
-              onClick={handleToggleDropdown}
-              className="dropdown-button"
-              style={{
-                color: "rgb(230,30,67)",
-                backgroundColor: "white",
-                border: "none",
-                fontSize: "14px",
-                fontStyle: "inherit",
-                fontFamily: "sans-serif",
-              }}
-            >
+            <button onClick={handleToggleDropdown} className="dropdown-button">
               More travel <RiArrowDropDownLine />
             </button>
             {isDropdownOpen && (
@@ -101,97 +99,38 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="mainnav-items d-flex">
-          <div className="getappbtn ">
-            <button
-              className="btn 
-          "
-              style={{
-                color: "black",
-                backgroundColor: "white",
-                border: "2px solid black",
-                borderRadius: "50px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-                fontSize: ".875rem",
-                lineHeight: "1.125rem",
-                marginTop: "14px",
-                fontSize: "14px",
-                fontStyle: "inherit",
-                fontFamily: "sans-serif",
-              }}
-            >
-              {" "}
-              <MdFileDownload
-                style={{
-                  color: "blue",
-                }}
-              />{" "}
-              Get App
-            </button>
+        <div className=" d-flex">
+          <div className="btn-icons d-flex ">
+            <div className="getappbtn">
+              <button className="btn get-app-btn ">
+                <MdFileDownload style={{ color: "blue" }} /> Get the App
+              </button>
+            </div>
+
+            <div className="nav-icons ">
+              <div>
+                {" "}
+                <IoBag style={{ width: "40px" }} />{" "}
+              </div>
+              <div>
+                <CgProfile />
+              </div>
+            </div>
           </div>
 
           <div className="nav-items">
-            <ul
-              className="d-flex justify-content-between"
-              style={{ listStyle: "none", padding: 0 }}
-            >
-              <li
-                style={{
-                  color: "rgb(230,30,67)",
-                  margin: "20px",
-                  fontSize: "14px",
-                  fontStyle: "inherit",
-                  fontFamily: "sans-serif",
-                }}
-              >
-                <FaGlobeAmericas style={{ marginRight: "5px" }} />
-                English
+            <ul className="d-flex justify-content-between">
+              <li className="language-option">
+                <Button className="btn btn-transparent" onClick={handleShow}>
+                  <FaGlobeAmericas style={{ marginRight: "5px" }} />
+                  English
+                </Button>
+                <LanguageModal show={showModal} handleClose={handleClose} />
               </li>
-              <li
-                style={{
-                  color: "rgb(230,30,67)",
-                  margin: "20px",
-                  fontSize: "14px",
-                  fontStyle: "inherit",
-                  fontFamily: "sans-serif",
-                }}
-              >
-                List your property
-              </li>
-              <li
-                style={{
-                  color: "rgb(230,30,67)",
-                  margin: "20px",
-                  fontSize: "14px",
-                  fontStyle: "inherit",
-                  fontFamily: "sans-serif",
-                }}
-              >
-                Support
-              </li>
-              <li
-                style={{
-                  color: "rgb(230,30,67)",
-                  margin: "20px",
-                  fontSize: "14px",
-                  fontStyle: "inherit",
-                  fontFamily: "sans-serif",
-                }}
-              >
-                Trips
-              </li>
-              <li
-                style={{
-                  color: "rgb(230,30,67)",
-                  margin: "20px",
-                  fontSize: "14px",
-                  fontStyle: "inherit",
-                  fontFamily: "sans-serif",
-                }}
-              >
-                sign in
-              </li>
+              <li>List your property</li>
+              <li>Support</li>
+              <li>Trips</li>
+              <li>Sign in</li>
             </ul>
           </div>
         </div>

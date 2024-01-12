@@ -1,0 +1,30 @@
+.Footer{
+                    background-color: rgb(255,255,255);
+}
+
+.footertop{
+color: rgb(40,45,112);
+}
+.footer-titles{
+color:rgb(25,30,59);
+font-size: 13px;
+}
+
+.text-reset {
+                        
+                    text-decoration: none;  
+                  }
+
+                  p{
+                    color: rgb(44,104,227); 
+                    font-size: .800rem;
+                    font-weight: 400;
+                    line-height: 1.125rem;
+                  }
+
+
+                  .footer-textp{
+                    color:rgb(28, 29, 37);    
+                    font-size: .875rem;
+                    font-weight: 400;
+                    line-height: 1.125rem;              }
